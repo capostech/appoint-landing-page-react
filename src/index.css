@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap");
-body {
+body,
+html {
   @apply font-serif;
+  @apply bg-[#10574b]; /* Full-height dark background */
+  margin: 0; /* Remove default browser margin */
+  padding: 0; /* Remove default browser padding */
+  @apply scrollbar-none;
 }
 
 @tailwind base;
