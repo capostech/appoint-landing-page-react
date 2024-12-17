@@ -1,7 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 
-export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+const flattenColorPalette =
+  require("tailwindcss/lib/util/flattenColorPalette").default;
+
+module.exports = {
+  content: ["./index.html", "./src/**/*.{js,jsx}"], // Adjusted for JavaScript
   theme: {
     extend: {
       fontFamily: {
@@ -28,5 +31,17 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwind-scrollbar"),
+    function addVariablesForColors({ addBase, theme }) {
+      const allColors = flattenColorPalette(theme("colors"));
+      const newVars = Object.fromEntries(
+        Object.entries(allColors).map(([key, val]) => [`--${key}`, val])
+      );
+
+      addBase({
+        ":root": newVars,
+      });
+    },
+  ],
 };
