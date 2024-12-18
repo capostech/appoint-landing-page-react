@@ -2,7 +2,7 @@
 body,
 html {
   @apply font-serif;
-  @apply bg-[#10574b]; /* Full-height dark background */
+  @apply bg-[#e6fbee]; /* Full-height dark background*/
   margin: 0; /* Remove default browser margin */
   padding: 0; /* Remove default browser padding */
   @apply scrollbar-none;
