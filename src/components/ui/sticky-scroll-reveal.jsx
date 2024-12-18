@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useMotionValueEvent, useScroll } from "framer-motion";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { div } from "framer-motion/client";
 
 export const StickyScroll = ({
   content,
@@ -32,7 +33,7 @@ export const StickyScroll = ({
   });
 
   const backgroundColors = [
-    "#FFFFFF",
+    "#FFFFFF"
   ];
   const linearGradients = [
     "linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))",
@@ -47,14 +48,15 @@ export const StickyScroll = ({
   }, [activeCard]);
 
   return (
-    (<motion.div
+    (
+    <motion.div
       animate={{
         backgroundColor: backgroundColors[activeCard % backgroundColors.length],
       }}
-      className="w-full h-screen overflow-y-auto flex justify-center relative  rounded-3xl scrollbar-none  "
+      className="w-full h-screen  overflow-y-auto flex justify-center relative  rounded-3xl scrollbar-none  "
       ref={ref}>
-      <div className="div relative flex items-start px-4 w-full lg:w-3/4">
-        <div className="max-w-full mx-10 ">
+      <div className="div relative flex items-start px-8 w-full lg:w-3/4">
+        <div className="max-w-full mx-20 ">
           {content.map((item, index) => (
             <div key={item.title + index} className="my-40">
               <motion.h2
@@ -85,7 +87,7 @@ export const StickyScroll = ({
       <div
         style={{ background: backgroundGradient }}
         className={cn(
-          "hidden lg:block h-96 w-2/4 rounded-3xl  sticky mx-4 top-40 overflow-hidden",
+          "hidden lg:block h-96 w-1/2 rounded-3xl  sticky mr-20 top-40 overflow-hidden",
           contentClassName
         )}>
         {content[activeCard].content ?? null}

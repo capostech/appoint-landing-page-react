@@ -9,8 +9,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div>
-      {showHero ? (
+    
         <div className="relative  bg-[#e6fbee] text-[#334155] h-screen flex flex-col items-center justify-center font-serif animate-fadeIn transition-opacity duration-1000">
           {/* Hero Section */}
           <div className="text-center max-w-3xl px-6">
@@ -18,23 +17,19 @@ const HeroSection = () => {
               Ever Wondered How Easy Healthcare Could Be?
             </h1>
             <p className="mt-6 text-lg sm:text-xl text-[#0B8470]">
-              We’re changing the way you connect with Doctors.
+              We’re changing the way you connect with Patients.
             </p>
-            <div className="mt-8 flex justify-center space-x-4">
+            <div className="mt-10   flex justify-center space-x-4">
               <button
                 onClick={handleButtonClick} // Add click handler
-                className="rounded-md bg-[#0b8470] px-5 py-3 text-sm font-semibold text-[#FFFFFF] shadow-lg hover:bg-[#0b8470] transition"
+                className="rounded-lg bg-[#0b8470] px-5 py-3 text-lg sm:text-xl font-semibold text-[#FFFFFF] shadow-lg hover:bg-[#0b8470] transition"
               >
-                find out
+                Scroll Down
               </button>
             </div>
           </div>
         </div>
-      ) : (
-        <div className=" rounded-md">
-        <StickyScrollRevealDemo/></div>
-      )}
-    </div>
+      
   );
 };
 

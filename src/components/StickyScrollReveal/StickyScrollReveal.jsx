@@ -56,12 +56,10 @@ const content = [
 
 export function StickyScrollRevealDemo() {
   return (
-    <div className="scrollbar-none">
-    <div className="m-20 p-10 flex justify-center">
-      <StickyScroll content={content} /></div>
-      <div className=" m-20 p-10"><ConversationSection/></div>
-      <div><Footer/>
-    </div>
+    <div className="scrollbar-none ">
+    
+      <StickyScroll content={content} />
+      {/* <div className="p-10 "><ConversationSection/></div> */}
     </div>
   );
 };
