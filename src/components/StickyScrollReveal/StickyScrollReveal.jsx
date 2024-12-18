@@ -1,7 +1,7 @@
 import React from "react";
 import { StickyScroll } from "../ui/sticky-scroll-reveal";
 import ConversationSection from "../ConversationSection/ConversationSection";
-
+import Footer from "../FooterSection/FooterSection";
 const content = [
   {
     title: "Patient Initiates Booking",
@@ -60,6 +60,8 @@ export function StickyScrollRevealDemo() {
     <div className="m-20 p-10 flex justify-center">
       <StickyScroll content={content} /></div>
       <div className=" m-20 p-10"><ConversationSection/></div>
+      <div><Footer/>
+    </div>
     </div>
   );
 };
